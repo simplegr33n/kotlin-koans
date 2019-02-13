@@ -29,7 +29,8 @@ fun todoTask9(): Nothing = TODO(
 
 data class RationalNumber(val numerator: Int, val denominator: Int)
 
-fun Int.r(): RationalNumber = todoTask9()
-fun Pair<Int, Int>.r(): RationalNumber = todoTask9()
+// Extension functions can use "this" to apply operations with the object calling them
+fun Int.r(): RationalNumber = RationalNumber(this, 1)
+fun Pair<Int, Int>.r(): RationalNumber = RationalNumber(this.first, this.second)
 
 

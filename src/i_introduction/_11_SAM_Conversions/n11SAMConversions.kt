@@ -15,6 +15,7 @@ fun todoTask11(): Nothing = TODO(
 
 fun task11(): List<Int> {
     val arrayList = arrayListOf(1, 5, 2)
-    Collections.sort(arrayList, { x, y -> todoTask11() })
+    // Descending Sort: if y > x then x || {x, y -> y - x}
+    Collections.sort(arrayList, { x, y -> y - x}) // {x, y -> x - y} for ascending
     return arrayList
 }
