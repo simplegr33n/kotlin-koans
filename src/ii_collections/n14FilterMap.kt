@@ -10,12 +10,25 @@ fun example1(list: List<Int>) {
 
 fun Shop.getCitiesCustomersAreFrom(): Set<City> {
     // Return the set of cities the customers are from
-    todoCollectionTask()
+    var cityList: ArrayList<City> = arrayListOf()
+    for (customer in customers) {
+        cityList.add(customer.city)
+    }
+
+    return cityList.toSet()
+
 }
 
 fun Shop.getCustomersFrom(city: City): List<Customer> {
     // Return a list of the customers who live in the given city
-    todoCollectionTask()
+    var customerList: ArrayList<Customer> = arrayListOf()
+    for (customer in customers) {
+        if (customer.city == city) {
+            customerList.add(customer)
+        }
+    }
+
+    return customerList.toList()
 }
 
 
